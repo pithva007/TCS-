@@ -8,12 +8,27 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import uvicorn
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-load_dotenv()
+BACKEND_DIR = Path(__file__).resolve().parent
+REPO_ROOT = BACKEND_DIR.parent
+load_dotenv(BACKEND_DIR / ".env")
+load_dotenv(REPO_ROOT / ".env")
 
 from services import data_ingester, data_watcher, rag_engine, failover_llm, guardrails, analytics
 
-DATA_DIR = os.getenv("DATA_DIR", str(data_ingester.DEFAULT_DATA_DIR))
+
+def resolve_data_dir() -> str:
+    configured = os.getenv("DATA_DIR", "").strip()
+    candidate = Path(configured).expanduser() if configured else data_ingester.DEFAULT_DATA_DIR
+    # Ignore stale absolute paths from another machine and use repository data.
+    if not candidate.is_dir() or not any(candidate.glob("*.json")):
+        candidate = data_ingester.DEFAULT_DATA_DIR
+    return str(candidate)
+
+
+DATA_DIR = resolve_data_dir()
+os.environ["DATA_DIR"] = DATA_DIR
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
