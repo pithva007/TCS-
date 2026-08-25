@@ -83,14 +83,14 @@ async def get_analytics_summary():
 @app.get("/api/campus/buildings")
 async def get_campus_buildings():
     data_dir = os.getenv("DATA_DIR", "/Users/jaimin/FAQ CHATBOT/files/")
+    buildings = []
+
+    # 1. Load buildings from campus_map.json
     campus_file = os.path.join(data_dir, "campus_map.json")
     if os.path.exists(campus_file):
         with open(campus_file, 'r') as f:
             data = json.load(f)
-            raw_buildings = data.get("buildings", [])
-            # Transform to match frontend Building interface
-            buildings = []
-            for b in raw_buildings:
+            for b in data.get("buildings", []):
                 buildings.append({
                     "id": b.get("id", ""),
                     "name": b.get("name", ""),
@@ -102,8 +102,39 @@ async def get_campus_buildings():
                         "lng": b.get("longitude", 0)
                     }
                 })
-            return {"buildings": buildings}
-    return {"buildings": []}
+
+    # 2. Merge/override with real GPS data from nirma_university_gps_navigation.json
+    gps_file = os.path.join(data_dir, "nirma_university_gps_navigation.json")
+    if os.path.exists(gps_file):
+        with open(gps_file, 'r') as f:
+            gps_data = json.load(f)
+            existing_ids = {b["id"] for b in buildings}
+            for b in gps_data.get("buildings", []):
+                bid = b.get("id", "")
+                entry = {
+                    "id": bid,
+                    "name": b.get("name", ""),
+                    "category": b.get("type", "academic").lower().replace(" ", "_"),
+                    "description": b.get("notes", f"{b.get('name', '')} at Nirma University"),
+                    "facilities": [],
+                    "location": {
+                        "lat": b.get("latitude", 0),
+                        "lng": b.get("longitude", 0)
+                    }
+                }
+                if b.get("website"):
+                    entry["description"] += f" Website: {b['website']}"
+                if b.get("phone"):
+                    entry["description"] += f" Phone: {b['phone']}"
+                if b.get("hours"):
+                    hours_str = ", ".join(f"{k}: {v}" for k, v in b["hours"].items())
+                    entry["description"] += f" Hours: {hours_str}"
+
+                if bid not in existing_ids:
+                    buildings.append(entry)
+                    existing_ids.add(bid)
+
+    return {"buildings": buildings}
 
 @app.websocket("/ws/chat")
 async def websocket_chat(websocket: WebSocket):
