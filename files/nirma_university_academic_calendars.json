@@ -1,0 +1,153 @@
+{
+  "dataset_info": {
+    "title": "Nirma University - Academic Calendars by Institute and Programme",
+    "purpose": "Directory of official academic calendar documents (semester start/end dates, exam windows, holidays) for every constituent institute and programme at Nirma University.",
+    "compiled_on": "2026-08-25",
+    "data_source_legend": {
+      "verified": "Live link discovered on the institute's official 'Academic Calendar' page (technology/management/law/pharmacy/commerce/architecture .nirmauni.ac.in), pointing to an actual PDF hosted on Nirma's S3 bucket.",
+      "not_publicly_listed": "The institute does not appear to publish a dedicated, itemized 'Academic Calendar' page with downloadable PDFs (as of compilation date); calendar info for these programmes is issued via internal notices/LMS instead.",
+      "synthetic": "No public source found; fabricated placeholder for structural completeness only."
+    },
+    "important_disclaimer": "These are PDF documents, not machine-readable date fields -- this dataset gives you the verified download links and metadata (programme, semester, term, academic year), not the individual day-by-day dates inside each PDF. Calendars are reissued every term, so links for 'current' terms will go stale; always check the institute's live Academic Calendar page for the latest version. Institute academic-calendar pages: technology.nirmauni.ac.in/academic-calendar, management.nirmauni.ac.in/academic-calendar, law.nirmauni.ac.in/academic-calendar, pharmacy.nirmauni.ac.in/academic-calendar, commerce.nirmauni.ac.in/academic-calendar."
+  },
+
+  "institutes": [
+    {
+      "institute": "Institute of Technology (ITNU)",
+      "data_source": "verified",
+      "calendar_page": "https://technology.nirmauni.ac.in/academic-calendar/",
+      "programmes_covered": ["B.Tech (all branches)", "M.Tech", "B.Sc 2+2 Dual Degree"],
+      "current_cycle_documents": [
+        {"title": "UG First Year - Odd Term 2026-27", "programme": "B.Tech 1st Year", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2026/07/1_Academic-Activity-Calendar-for-UG-First-Year-Odd-Term-2026-27.pdf"},
+        {"title": "B.Tech Semester III (D2D students) - Odd Term 2026-27", "programme": "B.Tech Sem III", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2026/07/2_Academic-Activity-Calendar-for-B-Tech-Semester-III-D-to-D-students_odd-Term-2026-27.pdf"},
+        {"title": "M.Tech Semester I - Odd Term 2026-27", "programme": "M.Tech Sem I", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2026/07/3_Academic-Activities-Calendar-M-Tech-Semester-I-Odd-Term-2026-27.pdf"},
+        {"title": "UG-PG Higher Semesters (Except First Year) - Odd Term 2026-27", "programme": "B.Tech/M.Tech higher semesters", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2026/07/4_Academic-Activities-Calendar-for-UG-PG-Higher-Semesters-Except-First-Year-Odd-Term-2026-27.pdf"},
+        {"title": "M.Tech Semester III - Odd Term 2026-27", "programme": "M.Tech Sem III", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2026/07/5_ACADEMIC-CALENDER-FOR-M-TECH-SEMESTER-III-ODD-TERM-2026-27.pdf"}
+      ],
+      "archived_full_year_documents": [
+        {"title": "All Programmes 2025-26", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2026/07/All-Programmes-25-26.pdf"},
+        {"title": "All Programmes 2024-25", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2025/12/IT_NU_24-25_Academic_Calendar.pdf"},
+        {"title": "All Programmes 2022-23", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2023/10/IT_NU_22-23_Academic_Calendar.pdf"},
+        {"title": "All Programmes 2021-22", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/22/2023/10/IT_NU_21-22_Academic_Calendar.pdf"}
+      ]
+    },
+    {
+      "institute": "Institute of Management (IMNU)",
+      "data_source": "verified",
+      "calendar_page": "https://management.nirmauni.ac.in/academic-calendar/",
+      "programmes_covered": ["BBA (Hons.)", "Integrated BBA-MBA (5-year)", "MBA", "MBA (Family Business & Entrepreneurship)", "MBA HRM"],
+      "current_cycle_documents": [
+        {"title": "BBA (Hons.) Academic Calendar A.Y. 2025-26", "programme": "BBA (Hons.)", "term": "A.Y. 2025-26", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/24/2025/07/BBA-Hons-Academic-Calendar-A.Y.-2025-26-1.pdf"},
+        {"title": "Integrated BBA 1st Year Academic Calendar A.Y. 2025-26", "programme": "Integrated BBA-MBA, Year 1", "term": "A.Y. 2025-26", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/24/2025/07/Int.-BBA-I-Academic-Calendar-A.Y.-2025-26.pdf"},
+        {"title": "BBA 2nd/3rd Year Academic Calendars A.Y. 2025-26", "programme": "Integrated BBA-MBA, Years 2-3", "term": "A.Y. 2025-26", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/24/2025/06/BBA-II-III-Academic-Calendars-for-A.Y.-2025-26.pdf"},
+        {"title": "iMBA Academic Calendar 2026-27", "programme": "Integrated MBA", "term": "2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/24/2026/05/IMBA-Academic-calendar-26-27.pdf"},
+        {"title": "MBA / MBA-Phase of B.Tech-MBA Calendar 2026-27", "programme": "MBA (incl. B.Tech-MBA phase)", "term": "2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/24/2026/05/MBA-MBA-Phase-of-B.-tech-MBA-26-27.pdf"},
+        {"title": "MBA FB&E Calendar 2026-27", "programme": "MBA Family Business & Entrepreneurship", "term": "2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/24/2026/05/MBAFB-E-26-27.pdf"},
+        {"title": "MBA HRM Calendar 2026-27", "programme": "MBA HRM", "term": "2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/24/2026/05/MBAHRM-26-27.pdf"}
+      ]
+    },
+    {
+      "institute": "Institute of Law (ILNU)",
+      "data_source": "verified",
+      "calendar_page": "https://law.nirmauni.ac.in/academic-calendar/",
+      "programmes_covered": ["B.A. LL.B. (Hons.)", "B.Com. LL.B. (Hons.)", "B.B.A. LL.B. (Hons.)", "LL.M. (One Year)"],
+      "current_cycle_documents": [
+        {"title": "Semester I Academic Calendar A.Y. 2026-27", "programme": "5-yr integrated law programmes, Sem I", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/19/2026/08/AcademicCalendarSem-I_AY_2026-27.pdf"},
+        {"title": "Semester III, V, VII Academic Calendar A.Y. 2026-27", "programme": "5-yr integrated law programmes, Sem III/V/VII", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/19/2026/08/Sem-III_V_VII_AcademicCalendar_AY2026-27.pdf"},
+        {"title": "Semester IX Academic Calendar A.Y. 2026-27", "programme": "5-yr integrated law programmes, Sem IX", "term": "Odd 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/19/2026/08/Sem-IX_AcademicCalendar_AY2026-27.pdf"},
+        {"title": "LL.M. Trimester I Calendar A.Y. 2026-27", "programme": "LL.M. (One Year)", "term": "Trimester I, 2026-27", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/19/2026/07/TrimesterI_LLM_2026-27.pdf"}
+      ]
+    },
+    {
+      "institute": "Institute of Pharmacy",
+      "data_source": "verified",
+      "calendar_page": "https://pharmacy.nirmauni.ac.in/academic-calendar/",
+      "programmes_covered": ["B.Pharm", "M.Pharm", "Pharm.D"],
+      "current_cycle_documents": [
+        {"title": "B.Pharm Semester III (2025-26)", "programme": "B.Pharm Sem III", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/17/2026/03/AC_BPH_II_2025_2026.pdf"},
+        {"title": "B.Pharm Semester V & VII (2026-27)", "programme": "B.Pharm Sem V, VII", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/17/2026/07/AC_BPH_V_VII_2026_27.pdf"},
+        {"title": "M.Pharm Semester III (2026-27)", "programme": "M.Pharm Sem III", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/17/2026/07/Aca_Cal_MPH_III_2026_27.pdf"},
+        {"title": "M.Pharm Semester IV (2025-26)", "programme": "M.Pharm Sem IV", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/17/2025/12/Aca_Cal_MPH_IV_2025_26.pdf"},
+        {"title": "PharmD Year II, III, IV, V (2026)", "programme": "PharmD Years II-V", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/17/2026/07/Aca_Cal_PD_II_III_IV_V_2026.pdf"}
+      ]
+    },
+    {
+      "institute": "Institute of Commerce",
+      "data_source": "verified",
+      "calendar_page": "https://commerce.nirmauni.ac.in/academic-calendar/",
+      "programmes_covered": ["B.Com. (Hons.)", "M.Com (Accounting & Taxation)"],
+      "current_cycle_documents": [
+        {"title": "Academic Calendar 2022-23", "programme": "B.Com (Hons.)", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/25/2023/10/ICNU-academic-calender-2022-23.pdf"},
+        {"title": "Academic Calendar 2021-22", "programme": "B.Com (Hons.)", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/sites/25/2023/10/ICNU-Academic-Calendar-2021-22.pdf"}
+      ],
+      "note": "The listed page only had 2021-22 and 2022-23 PDFs at compilation time; newer-year calendars for this fast-growing institute (launched B.Com Hons in 2021) may not yet be posted publicly -- confirm directly with the institute for 2026-27."
+    },
+    {
+      "institute": "Institute of Architecture and Planning (IAPNU)",
+      "data_source": "verified",
+      "calendar_page": "https://architecture.nirmauni.ac.in/ (no single indexed listing page found; PDFs linked from news/downloads)",
+      "programmes_covered": ["B.Arch", "B.Plan", "M.Plan"],
+      "current_cycle_documents": [
+        {"title": "B.Arch Semester III, V, VII, IX Academic Calendar - Odd Term 2025-26", "programme": "B.Arch higher semesters", "term": "Odd 2025-26", "url": "https://architecture.nirmauni.ac.in/wp-content/uploads/sites/20/2025/07/Academic-Calendar-odd-term-III-V-VII-IX.pdf"},
+        {"title": "B.Plan Semester III, V, VII Academic Calendar (archived)", "programme": "B.Plan higher semesters", "url": "https://nirmawebsite.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/04/Academic-Calender-IAPNU.pdf"}
+      ]
+    },
+    {
+      "institute": "Institute of Design (IDNU)",
+      "data_source": "verified",
+      "calendar_page": "https://design.nirmauni.ac.in/academic-calendar/",
+      "programmes_covered": ["B.Des (Industrial Design)", "B.Des (Communication Design)"],
+      "note": "Page lists calendars by term (Even/Odd Sem 2021-22 and 2022-23 confirmed indexed); specific 2025-26 PDF for B.Des Sem I/III/V/VII exists (via third-party mirror) but the direct nirmauni.ac.in link was not captured in this search pass -- recheck https://design.nirmauni.ac.in/academic-calendar/ directly for the current term.",
+      "known_documents": [
+        {"title": "Academic Calendar (Even Sem 2022-23)", "programme": "B.Des, all specializations"},
+        {"title": "Academic Calendar (Odd Sem 2022-23)", "programme": "B.Des, all specializations"},
+        {"title": "Academic Calendar (Even Sem 2021-22)", "programme": "B.Des, all specializations"},
+        {"title": "Academic Calendar (Odd Sem 2021-22)", "programme": "B.Des, all specializations"}
+      ]
+    },
+    {
+      "institute": "Institute of Science",
+      "data_source": "not_publicly_listed",
+      "calendar_page": "https://science.nirmauni.ac.in/ (has a general events 'Calendar' but no dedicated 'Academic Calendar' PDF-listing page like other institutes)",
+      "programmes_covered": ["M.Sc. Biotechnology", "M.Sc. Microbiology", "PhD"],
+      "note": "As a smaller institute (only 2 PG programmes + PhD), Institute of Science appears to follow the university-wide academic calendar rather than publishing its own term-by-term PDFs. Confirm current dates with the institute's Student Section directly."
+    },
+    {
+      "institute": "Faculty of Doctoral Studies and Research (FDSR) - PhD (all disciplines)",
+      "data_source": "verified",
+      "calendar_page": "https://nirmauni.ac.in/academic-calendar/ (university-level page lists a PhD-specific entry)",
+      "programmes_covered": ["Full-Time PhD", "Part-Time PhD (all faculties)"],
+      "note": "University-level academic calendar page listed an entry titled 'Ph.D Scholars - All Semester - II (Regular & External Students)', indicating PhD calendars are published centrally at nirmauni.ac.in rather than per-institute.",
+      "central_page_note": "The central institute-wise hub page (https://nirmauni.ac.in/about/the-nirma-university/accreditations-rankings/academic-calendar-institute-wise/) aggregates links to every institute; it blocks automated fetching, so browse it directly in a browser for a single master index."
+    }
+  ],
+
+  "university_wide_academic_structure": {
+    "data_source": "verified",
+    "note": "General structure inferred from multiple institutes' published calendars (2025-26 cycle), for context.",
+    "typical_terms_per_year": 2,
+    "term_names": ["Odd Term (roughly July/August to December)", "Even Term (roughly December/January to May)"],
+    "typical_first_year_orientation": "Mid-to-late July (e.g., B.Tech First Year Orientation was 18 July 2026)",
+    "typical_exam_pattern": "Continuous evaluation (CE tests) during the term, followed by an End Semester Examination (ESE) block at term's end",
+    "typical_holidays_observed": ["Babasaheb Ambedkar's Birthday (14 April)", "Standard national holidays (Independence Day, Republic Day, Gandhi Jayanti, etc.)", "Diwali break", "Summer break with internships scheduled in the gap"],
+    "university_level_activities_example_2025_26": [
+      "Patriotic Song Competition - 2 August 2025",
+      "Debate Competition - 30 August 2025",
+      "Raas Garba - 4 October 2025",
+      "One Act Play Competition - 1 November 2025",
+      "NUZEAL (Univ. Cultural Festival) - 19-21 Feb 2026",
+      "NIRMA CUP (Inter-University Sports)"
+    ]
+  },
+
+  "how_to_get_the_most_current_calendar": {
+    "data_source": "synthetic",
+    "note": "Practical guidance since these PDFs are reissued every term and old links can go stale.",
+    "steps": [
+      "Visit the specific institute's academic-calendar page directly (URLs listed per institute above) -- these are auto-updated by the university's web team each term.",
+      "If a listed PDF link 404s, it likely means a newer version has replaced it; revisit the calendar_page URL to get the current filename.",
+      "For programmes not listed above (e.g. current Institute of Design or Institute of Science documents), check the institute's 'Downloads' page or contact the Student Section / Dy. Registrar (Academic) directly.",
+      "The central hub at nirmauni.ac.in/about/the-nirma-university/accreditations-rankings/academic-calendar-institute-wise/ aggregates all institutes on one page but blocks automated scraping -- open it manually in a browser."
+    ]
+  }
+}

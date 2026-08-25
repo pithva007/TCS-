@@ -1,0 +1,41 @@
+{
+  "project": "Nirma University (Ahmedabad) FAQ / training dataset",
+  "structure": "One folder per constituent institute (e.g. ITNU, IMNU, IOP, IOS, IOL, IOA, IOC, IOD, IDS, FoDSR). Each institute folder holds separate JSON files: faculty.json, fees.json, placements.json, academic_calendar.json, syllabus.json, events.json, clubs.json.",
+  "institutes_identified": [
+    {"code": "ITNU", "name": "Institute of Technology", "established": 1995},
+    {"code": "IMNU", "name": "Institute of Management", "established": 1996},
+    {"code": "IDS",  "name": "Institute of Diploma Studies", "established": 1997},
+    {"code": "IOP",  "name": "Institute of Pharmacy", "established": 2003},
+    {"code": "IOS",  "name": "Institute of Science", "established": 2004},
+    {"code": "IOL",  "name": "Institute of Law", "established": 2007},
+    {"code": "IOA",  "name": "Institute of Architecture & Planning", "established": 2014},
+    {"code": "IOC",  "name": "Institute of Commerce", "established": null},
+    {"code": "IOD",  "name": "Institute of Design", "established": null},
+    {"code": "FoDSR","name": "Faculty of Doctoral Studies and Research", "established": null}
+  ],
+  "known_constraints": [
+    "nirmauni.ac.in (the root domain) blocks automated fetching via robots.txt — only search-engine snippets are usable from it, not full pages/PDFs.",
+    "Institute-level subdomains (e.g. technology.nirmauni.ac.in, cse.nirmauni.ac.in, ei.nirmauni.ac.in) ARE fetchable and contain faculty directories, placement stats, and fee pages.",
+    "Instagram pages cannot be crawled by this tool (no login/API access) — any Instagram-sourced event data would need to be supplied by the user (screenshots/exports) or gathered via public web search snippets only.",
+    "Detailed per-subject syllabus with credit-hour breakdowns lives in PDFs under each department's 'Academics > Curriculum' pages on the institute subdomains — fetchable, but there are hundreds of them (one per branch per semester); needs to be pulled department-by-department.",
+    "Year-by-year, company-by-company, position-and-package-level placement data is NOT fully public — official pages publish aggregate highs/averages and top recruiter lists, not a full company x package x student matrix. Where third-party sites (Shiksha, CollegeDunia, Careers360) report figures, they sometimes conflict — flagged as such below.",
+    "Campus map with building-to-building walking directions is not published as structured/GPS data anywhere found so far — only a static campus map image on the admissions site. Would need manual annotation."
+  ],
+  "status_by_institute": {
+    "ITNU": "Faculty list (~150 names, designations, degrees, research areas) DONE. Placement highlights (multi-year) DONE. Fee snapshot (BTech, illustrative branches) DONE. Syllabus, full academic calendar, events, clubs = NOT YET DONE.",
+    "IMNU": "not started",
+    "IOP": "not started",
+    "IOS": "not started",
+    "IOL": "not started",
+    "IOA": "not started",
+    "IOC": "not started",
+    "IOD": "not started",
+    "IDS": "not started",
+    "FoDSR": "not started"
+  },
+  "next_steps": [
+    "Finish ITNU: pull department-wise curriculum PDFs for syllabus.json, academic calendar page, events/clubs page.",
+    "Repeat the same faculty+fees+placements+calendar+events+clubs pipeline for IMNU, IOP, IOS, IOL, IOA, IOC, IOD, IDS, FoDSR one institute at a time.",
+    "For campus map/building directions, best option is the official PDF campus map (if found) annotated manually, or user-supplied building list to structure into a JSON graph."
+  ]
+}

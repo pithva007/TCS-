@@ -1,0 +1,32 @@
+{
+  "institute": "Institute of Technology, Nirma University (ITNU)",
+  "sources": [
+    "https://collegedunia.com/university/25503-nirma-university-ahmedabad/bachelor-of-technology-btech-artificial-intelligence-and-machine-learning-15865",
+    "https://collegedunia.com/university/25503-nirma-university-ahmedabad/bachelor-of-technology-btech-computer-science-and-engineering-2049",
+    "https://collegedunia.com/university/25503-nirma-university-ahmedabad/bachelor-of-technology-btech-electrical-engineering-2052",
+    "https://www.shiksha.com/college/institute-of-technology-nirma-university-s-g-highway-ahmedabad-29753/fees"
+  ],
+  "caveat": "Figures are third-party aggregator data (CollegeDunia/Shiksha), cross-checked where possible, for AY 2026-27. These change annually and are subject to Gujarat FRC (Fee Regulatory Committee) approval — always confirm against the official fee circular on nirmauni.ac.in/online-fees-payment before quoting to students.",
+  "btech_2026_27": {
+    "tuition_fee_per_annum_inr": 275000,
+    "tuition_fee_4_years_inr": 1100000,
+    "one_time_charges_inr": {"enrollment_seminar_alumni": "included in first year total"},
+    "examination_fee_per_annum_inr": "additional, exact figure not confirmed",
+    "security_deposit_refundable_inr": 7000,
+    "total_first_year_cost_inr_approx": 294700,
+    "total_4_year_academic_fee_inr_approx": 1141000,
+    "nri_category": {"tuition_per_annum_usd": 6500, "other_fees_inr": 19700},
+    "application_fee_inr": {"gujarat_board": 350, "outside_gujarat_board": 1200},
+    "hostel": "No on-campus hostel facility for B.Tech students as of this data; university provides guidance for off-campus PG/hostel accommodation (third-party PG hostels near campus commonly cited around INR 80,000-100,000/year) and a bus facility from Ahmedabad/Gandhinagar.",
+    "categories": ["All India (JEE Main based)", "Gujarat State Quota / ACPC (GUJCET + 12th board)", "NRI / NRI-Sponsored"]
+  },
+  "mtech_mca_approx": {
+    "tuition_per_semester_inr_approx": "120000+ (varies by programme, third-party estimate, unverified against official circular)",
+    "gate_scholarship": "Available for GATE-qualified MTech students; merit-based support for non-GATE students",
+    "hostel_available": true
+  },
+  "older_reference_point": {
+    "note": "One alumni review cited historical BTech annual fee rising from ~INR 1,20,000 to ~INR 1,40,000 in an earlier cohort — included only to show the fee trend over years, not current."
+  },
+  "todo": "Confirm exact examination fee, semester-wise breakdown for years 2-4, MTech/MCA/PhD official fee circulars, and mess fee (separate from hostel) once official fee PDF is fetched."
+}

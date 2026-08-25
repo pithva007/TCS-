@@ -1,0 +1,4 @@
+program,department,semester,course_code,course_name,credits,type,description
+BTech,CSE,7,CS701,Machine Learning,4,Core,Introduction to supervised and unsupervised machine learning algorithms.
+BTech,CSE,7,CS702,Cloud Computing,3,Elective,"Cloud architecture, AWS, and deployment strategies."
+BTech,IT,5,IT501,Web Development,4,Core,Frontend and Backend web development using React and Node.

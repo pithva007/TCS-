@@ -1,0 +1,4 @@
+faculty_id,name,department,designation,qualification,specialization,subjects,email,office,profile_url
+FAC001,Dr. Rajesh Shah,CSE,Professor,PhD,"Machine Learning, Deep Learning","ML, Neural Networks",rajesh.shah@nirma.edu,CSE-201,https://nirma.edu/rajesh
+FAC002,Dr. Smita Patel,CSE,Associate Professor,PhD,"Data Science, NLP","NLP, Python",smita.patel@nirma.edu,CSE-202,https://nirma.edu/smita
+FAC003,Prof. Anil Mehta,IT,Assistant Professor,M.Tech,Web Technologies,"Next.js, Fullstack",anil.mehta@nirma.edu,IT-105,

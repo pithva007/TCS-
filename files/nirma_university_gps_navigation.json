@@ -1,0 +1,508 @@
+{
+  "dataset_info": {
+    "title": "Nirma University Campus GPS & Inter-Building Navigation Dataset",
+    "purpose": "Training/fine-tuning data for real-world GPS coordinates of Nirma University buildings and navigation between them.",
+    "compiled_on": "2026-08-25",
+    "data_source_legend": {
+      "verified": "Retrieved live from Google Places (real place_id, coordinates, ratings, hours, phone, website).",
+      "computed": "Derived mathematically (haversine straight-line distance) from the verified coordinates above -- not an actual routed walking path, so treat as a lower-bound estimate.",
+      "synthetic": "Fabricated placeholder used only where no data could be found."
+    },
+    "important_disclaimer": "Straight-line ('as the crow flies') distances will be shorter than real walking-path distances, since campus paths, buildings, and roads add detours. For turn-by-turn walking directions, use the place_id/coordinates with a real routing engine (e.g., Google Maps Directions API or OSRM) rather than relying on the straight-line numbers here."
+  },
+  "campus_overview": {
+    "data_source": "verified",
+    "name": "Nirma University",
+    "address": "Sarkhej-Gandhinagar Highway, Ahmedabad, Gujarat 382481, India",
+    "campus_size_acres": 115,
+    "center_latitude": 23.1286792,
+    "center_longitude": 72.5454424
+  },
+  "buildings": [
+    {
+      "id": "main_point",
+      "name": "Nirma University (Main Point)",
+      "type": "Reference/Signage Point",
+      "latitude": 23.1286792,
+      "longitude": 72.5454424,
+      "place_id": "ChIJZ1ESRS-DXjkR21vCI8uxbIc",
+      "website": "https://nirmauni.ac.in/",
+      "phone": "+91 79 7165 2000",
+      "google_maps_url": "https://maps.google.com/?cid=9758369978641439707",
+      "rating": 4.4,
+      "notes": "Central Google-indexed point for the university, used as origin for distance calc"
+    },
+    {
+      "id": "main_gate",
+      "name": "Main Gate",
+      "type": "Campus Entrance",
+      "latitude": 23.1297831,
+      "longitude": 72.5414009,
+      "place_id": "ChIJfepxfgCDXjkR6rxA6ZFtddk",
+      "phone": null,
+      "rating": 4.5,
+      "notes": "Helmet mandatory for two-wheeler entry"
+    },
+    {
+      "id": "itnu_n_block_cse",
+      "name": "Institute of Technology - N Block (Computer Science Dept)",
+      "type": "Academic Block",
+      "latitude": 23.1296051,
+      "longitude": 72.5444161,
+      "place_id": "ChIJa7VcbQCDXjkRrAlePdFAyyc",
+      "website": "http://cse.nirmauni.ac.in/",
+      "phone": null,
+      "rating": 5.0,
+      "hours": {
+        "mon_fri": "8:45 AM - 6:00 PM",
+        "sat": "9:00 AM - 4:00 PM",
+        "sun": "Closed"
+      }
+    },
+    {
+      "id": "imnu",
+      "name": "Institute of Management (IMNU)",
+      "type": "Academic Block",
+      "latitude": 23.1290038,
+      "longitude": 72.5467214,
+      "place_id": "ChIJHY94KpWCXjkRyWxUuwmkkGs",
+      "website": "https://management.nirmauni.ac.in/",
+      "phone": "+91 2717 241 900",
+      "rating": 4.5,
+      "hours": {
+        "mon_fri": "9:00 AM - 9:00 PM",
+        "sat_sun": "Closed"
+      }
+    },
+    {
+      "id": "ilnu",
+      "name": "Institute of Law (ILNU)",
+      "type": "Academic Block",
+      "latitude": 23.1276219,
+      "longitude": 72.5446621,
+      "place_id": "ChIJRZBZpOqCXjkRKXiHFZkslsI",
+      "website": "https://law.nirmauni.ac.in/",
+      "phone": "+91 2717 241 912",
+      "rating": 3.8
+    },
+    {
+      "id": "pharmacy",
+      "name": "Institute of Pharmacy",
+      "type": "Academic Block",
+      "latitude": 23.1290355,
+      "longitude": 72.547711,
+      "place_id": "ChIJfyqN0pSCXjkRolB1IT6Hik8",
+      "website": "https://pharmacy.nirmauni.ac.in/",
+      "phone": "+91 2717 241 900",
+      "rating": 4.4
+    },
+    {
+      "id": "architecture",
+      "name": "Institute of Architecture and Planning",
+      "type": "Academic Block",
+      "latitude": 23.1276781,
+      "longitude": 72.5426686,
+      "place_id": "ChIJ4TlNDcCCXjkRcireVXauG50",
+      "website": "https://architecture.nirmauni.ac.in/",
+      "phone": "+91 91792 41911",
+      "rating": 4.4
+    },
+    {
+      "id": "science",
+      "name": "Institute of Science",
+      "type": "Academic Block",
+      "latitude": 23.1276839,
+      "longitude": 72.5476381,
+      "place_id": "ChIJo2pTIuuCXjkRlGdUKN-t5q0",
+      "website": "https://science.nirmauni.ac.in/",
+      "phone": "+91 79 7165 2753",
+      "rating": 4.4
+    },
+    {
+      "id": "commerce",
+      "name": "Institute of Commerce (W Building)",
+      "type": "Academic Block",
+      "latitude": 23.1288106,
+      "longitude": 72.5455125,
+      "place_id": "ChIJS-o62duDXjkRPcx7j2MnDyc",
+      "website": "https://commerce.nirmauni.ac.in/",
+      "phone": "+91 79 7165 2000",
+      "rating": 4.3
+    },
+    {
+      "id": "design",
+      "name": "Institute of Design",
+      "type": "Academic Block",
+      "latitude": 23.1283015,
+      "longitude": 72.5423343,
+      "place_id": "ChIJywknir-CXjkRnhSCqTR_J-U",
+      "website": "https://design.nirmauni.ac.in/",
+      "phone": "+91 79 3064 2700",
+      "rating": 4.0,
+      "hours": {
+        "mon_fri": "9:00 AM - 6:00 PM",
+        "sat_sun": "Closed"
+      }
+    },
+    {
+      "id": "hostel",
+      "name": "University Hostel",
+      "type": "Residential",
+      "latitude": 23.1263204,
+      "longitude": 72.5457042,
+      "place_id": "ChIJk_Gd8-qCXjkRogzXRxuPLKw",
+      "phone": null,
+      "rating": null,
+      "notes": "General hostel zone; PG students only (per official B.Tech FAQ, no on-campus UG hostel)"
+    }
+  ],
+  "pairwise_building_navigation": {
+    "data_source": "computed",
+    "method": "Haversine straight-line distance between building coordinates; walking time assumes average pace of 1.4 m/s (~5 km/h)",
+    "unit_notes": {
+      "straight_line_distance_m": "meters",
+      "estimated_walk_time_min": "minutes, straight-line estimate only -- real time will be higher due to paths/buildings"
+    },
+    "routes": [
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Main Gate",
+        "straight_line_distance_m": 431.1,
+        "estimated_walk_time_min": 5.1
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Technology - N Block (CSE, New Bldg)",
+        "straight_line_distance_m": 147.0,
+        "estimated_walk_time_min": 1.8
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Management (IMNU)",
+        "straight_line_distance_m": 135.7,
+        "estimated_walk_time_min": 1.6
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Law (ILNU)",
+        "straight_line_distance_m": 142.1,
+        "estimated_walk_time_min": 1.7
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Pharmacy",
+        "straight_line_distance_m": 235.3,
+        "estimated_walk_time_min": 2.8
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Architecture",
+        "straight_line_distance_m": 304.7,
+        "estimated_walk_time_min": 3.6
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Science",
+        "straight_line_distance_m": 250.3,
+        "estimated_walk_time_min": 3.0
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 16.3,
+        "estimated_walk_time_min": 0.2
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 320.6,
+        "estimated_walk_time_min": 3.8
+      },
+      {
+        "from": "Main University Point (Signage/Admin)",
+        "to": "University Hostel",
+        "straight_line_distance_m": 263.6,
+        "estimated_walk_time_min": 3.1
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Technology - N Block (CSE, New Bldg)",
+        "straight_line_distance_m": 309.0,
+        "estimated_walk_time_min": 3.7
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Management (IMNU)",
+        "straight_line_distance_m": 550.9,
+        "estimated_walk_time_min": 6.6
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Law (ILNU)",
+        "straight_line_distance_m": 411.0,
+        "estimated_walk_time_min": 4.9
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Pharmacy",
+        "straight_line_distance_m": 650.6,
+        "estimated_walk_time_min": 7.7
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Architecture",
+        "straight_line_distance_m": 267.6,
+        "estimated_walk_time_min": 3.2
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Science",
+        "straight_line_distance_m": 679.2,
+        "estimated_walk_time_min": 8.1
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 434.1,
+        "estimated_walk_time_min": 5.2
+      },
+      {
+        "from": "Main Gate",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 190.4,
+        "estimated_walk_time_min": 2.3
+      },
+      {
+        "from": "Main Gate",
+        "to": "University Hostel",
+        "straight_line_distance_m": 584.7,
+        "estimated_walk_time_min": 7.0
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "Institute of Management (IMNU)",
+        "straight_line_distance_m": 245.0,
+        "estimated_walk_time_min": 2.9
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "Institute of Law (ILNU)",
+        "straight_line_distance_m": 222.0,
+        "estimated_walk_time_min": 2.6
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "Institute of Pharmacy",
+        "straight_line_distance_m": 342.8,
+        "estimated_walk_time_min": 4.1
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "Institute of Architecture",
+        "straight_line_distance_m": 279.0,
+        "estimated_walk_time_min": 3.3
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "Institute of Science",
+        "straight_line_distance_m": 392.7,
+        "estimated_walk_time_min": 4.7
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 142.7,
+        "estimated_walk_time_min": 1.7
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 257.5,
+        "estimated_walk_time_min": 3.1
+      },
+      {
+        "from": "Institute of Technology - N Block (CSE, New Bldg)",
+        "to": "University Hostel",
+        "straight_line_distance_m": 388.3,
+        "estimated_walk_time_min": 4.6
+      },
+      {
+        "from": "Institute of Management (IMNU)",
+        "to": "Institute of Law (ILNU)",
+        "straight_line_distance_m": 260.7,
+        "estimated_walk_time_min": 3.1
+      },
+      {
+        "from": "Institute of Management (IMNU)",
+        "to": "Institute of Pharmacy",
+        "straight_line_distance_m": 101.3,
+        "estimated_walk_time_min": 1.2
+      },
+      {
+        "from": "Institute of Management (IMNU)",
+        "to": "Institute of Architecture",
+        "straight_line_distance_m": 439.9,
+        "estimated_walk_time_min": 5.2
+      },
+      {
+        "from": "Institute of Management (IMNU)",
+        "to": "Institute of Science",
+        "straight_line_distance_m": 174.1,
+        "estimated_walk_time_min": 2.1
+      },
+      {
+        "from": "Institute of Management (IMNU)",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 125.5,
+        "estimated_walk_time_min": 1.5
+      },
+      {
+        "from": "Institute of Management (IMNU)",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 455.4,
+        "estimated_walk_time_min": 5.4
+      },
+      {
+        "from": "Institute of Management (IMNU)",
+        "to": "University Hostel",
+        "straight_line_distance_m": 316.0,
+        "estimated_walk_time_min": 3.8
+      },
+      {
+        "from": "Institute of Law (ILNU)",
+        "to": "Institute of Pharmacy",
+        "straight_line_distance_m": 349.2,
+        "estimated_walk_time_min": 4.2
+      },
+      {
+        "from": "Institute of Law (ILNU)",
+        "to": "Institute of Architecture",
+        "straight_line_distance_m": 203.9,
+        "estimated_walk_time_min": 2.4
+      },
+      {
+        "from": "Institute of Law (ILNU)",
+        "to": "Institute of Science",
+        "straight_line_distance_m": 304.4,
+        "estimated_walk_time_min": 3.6
+      },
+      {
+        "from": "Institute of Law (ILNU)",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 158.2,
+        "estimated_walk_time_min": 1.9
+      },
+      {
+        "from": "Institute of Law (ILNU)",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 249.7,
+        "estimated_walk_time_min": 3.0
+      },
+      {
+        "from": "Institute of Law (ILNU)",
+        "to": "University Hostel",
+        "straight_line_distance_m": 179.7,
+        "estimated_walk_time_min": 2.1
+      },
+      {
+        "from": "Institute of Pharmacy",
+        "to": "Institute of Architecture",
+        "straight_line_distance_m": 537.3,
+        "estimated_walk_time_min": 6.4
+      },
+      {
+        "from": "Institute of Pharmacy",
+        "to": "Institute of Science",
+        "straight_line_distance_m": 150.5,
+        "estimated_walk_time_min": 1.8
+      },
+      {
+        "from": "Institute of Pharmacy",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 226.2,
+        "estimated_walk_time_min": 2.7
+      },
+      {
+        "from": "Institute of Pharmacy",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 555.8,
+        "estimated_walk_time_min": 6.6
+      },
+      {
+        "from": "Institute of Pharmacy",
+        "to": "University Hostel",
+        "straight_line_distance_m": 365.0,
+        "estimated_walk_time_min": 4.3
+      },
+      {
+        "from": "Institute of Architecture",
+        "to": "Institute of Science",
+        "straight_line_distance_m": 508.2,
+        "estimated_walk_time_min": 6.0
+      },
+      {
+        "from": "Institute of Architecture",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 316.9,
+        "estimated_walk_time_min": 3.8
+      },
+      {
+        "from": "Institute of Architecture",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 77.3,
+        "estimated_walk_time_min": 0.9
+      },
+      {
+        "from": "Institute of Architecture",
+        "to": "University Hostel",
+        "straight_line_distance_m": 345.2,
+        "estimated_walk_time_min": 4.1
+      },
+      {
+        "from": "Institute of Science",
+        "to": "Institute of Commerce (W Building)",
+        "straight_line_distance_m": 250.9,
+        "estimated_walk_time_min": 3.0
+      },
+      {
+        "from": "Institute of Science",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 546.7,
+        "estimated_walk_time_min": 6.5
+      },
+      {
+        "from": "Institute of Science",
+        "to": "University Hostel",
+        "straight_line_distance_m": 249.2,
+        "estimated_walk_time_min": 3.0
+      },
+      {
+        "from": "Institute of Commerce (W Building)",
+        "to": "Institute of Design",
+        "straight_line_distance_m": 329.9,
+        "estimated_walk_time_min": 3.9
+      },
+      {
+        "from": "Institute of Commerce (W Building)",
+        "to": "University Hostel",
+        "straight_line_distance_m": 277.6,
+        "estimated_walk_time_min": 3.3
+      },
+      {
+        "from": "Institute of Design",
+        "to": "University Hostel",
+        "straight_line_distance_m": 409.0,
+        "estimated_walk_time_min": 4.9
+      }
+    ]
+  },
+  "how_to_get_real_routes_programmatically": {
+    "data_source": "synthetic",
+    "note": "Guidance for building an actual navigable route (not just straight-line) using this data as input.",
+    "suggested_approach": [
+      "Use each building's place_id with the Google Maps Directions API (mode=walking, origin=place_id:<id>, destination=place_id:<id>) to get a real walking route with polyline.",
+      "Alternatively, feed the lat/lng pairs into an open-source router like OSRM or GraphHopper if you want a self-hosted, non-Google solution.",
+      "Cache the resulting polylines/step-by-step directions alongside this JSON if you need a fully offline navigation dataset for model training."
+    ]
+  }
+}

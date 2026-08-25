@@ -1,0 +1,393 @@
+{
+  "dataset_info": {
+    "title": "Nirma University Scholarships, Admissions, GPS & Contact Dataset",
+    "purpose": "Training/fine-tuning data covering Nirma University (Ahmedabad, India) scholarships, eligibility, application process, doubt-resolution contacts, and campus geolocation.",
+    "compiled_on": "2026-08-25",
+    "data_source_legend": {
+      "verified": "Compiled from Nirma University's official admissions site (admissions.nirmauni.ac.in) and other public sources found via web search, then paraphrased into structured form.",
+      "synthetic": "Not found in public sources; generated for completeness/training diversity. Treat as illustrative, NOT authoritative. Verify with the university before relying on it."
+    },
+    "important_disclaimer": "Scholarship amounts, ranks, dates, and fees change every admission cycle. Always cross-check with the official site (https://admissions.nirmauni.ac.in) or the relevant institute's admission office before making decisions. Entries marked 'synthetic' are fabricated placeholders for model training only."
+  },
+
+  "university_profile": {
+    "data_source": "verified",
+    "name": "Nirma University",
+    "short_name": "NU",
+    "also_known_as": "Institute of Technology Nirma University (ITNU) is one of its constituent institutes",
+    "type": "Private university (statutory university under a Gujarat state act)",
+    "established_year": 2003,
+    "run_by": "Nirma Education and Research Foundation (NERF)",
+    "accreditation": "NAAC A+",
+    "affiliation": "UGC recognized",
+    "motto_sanskrit": "Tamaso Ma Jyotirgamaya",
+    "motto_english": "From darkness, lead me to light",
+    "campus_size": "About 115 acres, urban campus",
+    "location_description": "Near Vaishnodevi Circle, on Sarkhej-Gandhinagar Highway, Ahmedabad, Gujarat, India",
+    "postal_address": "Institute of Technology, Nirma University Campus, Sarkhej-Gandhinagar Highway, Ahmedabad - 382481, Gujarat, India",
+    "constituent_institutes": [
+      "Institute of Technology (Engineering, B.Tech/M.Tech)",
+      "Institute of Management (BBA, MBA, Integrated BBA-MBA)",
+      "Institute of Law",
+      "Institute of Pharmacy",
+      "Institute of Science",
+      "Institute of Architecture and Planning",
+      "Institute of Commerce",
+      "Institute of Design",
+      "Institute of Doctoral Studies and Research (PhD)"
+    ],
+    "website": "https://nirmauni.ac.in",
+    "admissions_portal": "https://admissions.nirmauni.ac.in"
+  },
+
+  "gps_data": {
+    "data_source": "verified",
+    "note": "Coordinates below for the main campus were aggregated from public GPS lookup services; sub-building coordinates under 'campus_landmarks_synthetic' are estimated/synthetic since no official per-building GPS is published.",
+    "main_campus": {
+      "name": "Nirma University Main Campus",
+      "latitude": 23.129318,
+      "longitude": 72.544884,
+      "latitude_dms": "23°7'45.5448\" N",
+      "longitude_dms": "72°32'41.5824\" E",
+      "elevation_m_approx": 55,
+      "address": "Sarkhej-Gandhinagar Highway, Ahmedabad, Gujarat 382481, India",
+      "nearest_landmark": "Vaishnodevi Circle"
+    },
+    "reference_distances": [
+      {
+        "from": "Ahmedabad Railway Station (Kalupur)",
+        "straight_line_km": 13.2,
+        "driving_km_approx": 16.9,
+        "typical_drive_time_min": 30,
+        "data_source": "verified"
+      },
+      {
+        "from": "Sardar Vallabhbhai Patel International Airport",
+        "straight_line_km_approx": 14,
+        "driving_km_approx": 18,
+        "typical_drive_time_min": 30,
+        "data_source": "synthetic"
+      },
+      {
+        "from": "Gujarat University Metro Station (Blue Line)",
+        "latitude": 23.04486,
+        "longitude": 72.54361,
+        "straight_line_km_approx": 9.4,
+        "data_source": "verified"
+      }
+    ],
+    "campus_landmarks_synthetic": [
+      {"name": "Main Entrance Gate", "latitude": 23.12967, "longitude": 72.54421, "note": "Estimated offset from main campus centroid"},
+      {"name": "Institute of Technology (ITNU) Block", "latitude": 23.12981, "longitude": 72.54538, "note": "Estimated"},
+      {"name": "Institute of Management (IMNU) Block", "latitude": 23.12889, "longitude": 72.54467, "note": "Estimated"},
+      {"name": "Institute of Law (ILNU) Block", "latitude": 23.12933, "longitude": 72.54601, "note": "Estimated"},
+      {"name": "Central Library", "latitude": 23.12958, "longitude": 72.54502, "note": "Estimated"},
+      {"name": "Postgraduate Hostel Zone", "latitude": 23.13102, "longitude": 72.54355, "note": "Estimated"},
+      {"name": "UG Admission Office (ID Block)", "latitude": 23.12945, "longitude": 72.54489, "note": "Estimated; real address confirmed as 'ID-210, ID Block, Nirma University Campus'"}
+    ]
+  },
+
+  "scholarships": [
+    {
+      "id": "btech-cat1-full-waiver",
+      "data_source": "verified",
+      "program": "B.Tech (Institute of Technology)",
+      "category": "Category I - Full Tuition Fee Waiver",
+      "basis": "JEE (Main) All-India CRL rank or ACPC merit rank, branch-wise cutoffs",
+      "benefit": "100% waiver of tuition fee for that academic year",
+      "eligibility_examples": [
+        "CSE / CSE(AI&ML): JEE Main CRL rank 1-5500 OR ACPC merit rank 1-75",
+        "Chemical/Civil/Electrical/ECE/EI/Mechanical/VLSI Engg: JEE Main CRL rank 1-20000 OR ACPC merit rank 1-200"
+      ],
+      "income_limit": "No income limit for this category",
+      "renewal_conditions": [
+        "Good conduct through the previous year",
+        "No disciplinary action or unfair-means case",
+        "Minimum CGPA of 7.0 and pass all courses in first attempt",
+        "Maintain minimum attendance (exceptions for genuine illness with HoI approval)",
+        "Not receiving any other scholarship simultaneously"
+      ],
+      "not_eligible": ["NRI / NRI-Sponsored / PIO / Foreign National / CIWGC category admits"]
+    },
+    {
+      "id": "btech-cat2a-dept-merit",
+      "data_source": "verified",
+      "program": "B.Tech (Institute of Technology)",
+      "category": "Category II-A - Department-wise Merit Scholarship",
+      "basis": "Top-ranked students within each branch by JEE (Main) or GUJCET score",
+      "benefit": "Rs. 1,00,000 per annum",
+      "income_limit": "No income limit",
+      "example_slots": "e.g., CSE: top 10 (All-India) + top 5 (ACPC); Chemical/EI/VLSI/CSE-AIML: top 2 (All-India) + top 1 (ACPC); total 36 (All-India) + 18 (ACPC) across all branches"
+    },
+    {
+      "id": "btech-cat2b-open-merit",
+      "data_source": "verified",
+      "program": "B.Tech (Institute of Technology)",
+      "category": "Category II-B - Open Merit Scholarship (all departments combined)",
+      "basis": "Overall JEE (Main) or GUJCET rank across all branches",
+      "benefit": "Merit-based scholarship, amount as per university policy",
+      "eligibility": "Top 12 by JEE (Main) rank, or Top 6 by ACPC merit rank",
+      "income_limit": "No income limit"
+    },
+    {
+      "id": "btech-cat3a-merit-cum-means-dept",
+      "data_source": "verified",
+      "program": "B.Tech (Institute of Technology)",
+      "category": "Category III-A - Department-wise Merit-cum-Means Scholarship",
+      "basis": "JEE (Main)/GUJCET score plus family income criteria",
+      "benefit": "Rs. 1,00,000 per annum",
+      "income_limit": "Total annual family income from all sources up to Rs. 4 Lakh",
+      "example_slots": "Similar branch-wise slot structure as Category II-A, totaling 36 (All-India) + 18 (ACPC)"
+    },
+    {
+      "id": "btech-cat3b-merit-cum-means-open",
+      "data_source": "verified",
+      "program": "B.Tech (Institute of Technology)",
+      "category": "Category III-B - Open Merit-cum-Means Scholarship (all departments)",
+      "basis": "Overall JEE (Main)/GUJCET rank plus family income",
+      "benefit": "Rs. 50,000 per annum",
+      "income_limit": "Total annual family income up to Rs. 8 Lakh",
+      "eligibility": "Top 43 by JEE (Main) rank, or Top 17 by ACPC merit rank"
+    },
+    {
+      "id": "btech-mysy-support",
+      "data_source": "verified",
+      "program": "B.Tech (Institute of Technology)",
+      "category": "Support for MYSY (Mukhyamantri Yuva Swavalamban Yojana) recipients",
+      "note": "Students receiving the Gujarat government's MYSY scholarship are not eligible for Nirma's own scholarships listed above. Instead, the university provides supplementary financial support (exam fees, books/stationery, transport, etc.) up to Rs. 50,000 per annum.",
+      "benefit_cap": "Rs. 50,000 per annum"
+    },
+    {
+      "id": "btech-mtech-gate",
+      "data_source": "verified",
+      "program": "M.Tech (Institute of Technology)",
+      "category": "GATE-qualified M.Tech scholarship",
+      "note": "M.Tech students admitted through GATE score are eligible for scholarship support; typically structured like a teaching/research assistantship requiring service hours.",
+      "renewal_conditions": ["Maintain SGPA/CGPA of 6.0 or above each semester", "Complete assigned teaching/administrative hours per week (commonly ~8 hrs/week)"]
+    },
+    {
+      "id": "btech-alumni-special-scholarship",
+      "data_source": "verified",
+      "program": "B.Tech (Institute of Technology)",
+      "category": "Alumni Association Special Scholarship",
+      "note": "Instituted by the Nirma Alumni Association for financially weak students at the Institute of Technology.",
+      "renewal_conditions": ["Maintain CGPA of 7.5 or above each academic year", "Must not be receiving a scholarship from any other agency simultaneously"]
+    },
+    {
+      "id": "btech-earn-while-you-learn",
+      "data_source": "verified",
+      "program": "B.Tech / M.Tech (Institute of Technology)",
+      "category": "Earn While You Learn (EWYL) Scheme",
+      "note": "Allows financially needy students who are not already receiving university or government financial assistance to work on campus and earn while studying.",
+      "eligibility": "Annual family income must not exceed Rs. 10 Lakh; student must not be receiving any other financial assistance",
+      "benefit": "Stipend/earning determined per university norms for hours worked"
+    },
+    {
+      "id": "mba-merit-scholarship",
+      "data_source": "verified",
+      "program": "MBA (Institute of Management)",
+      "category": "Merit-based Scholarship",
+      "basis": "Academic merit at time of MBA admission",
+      "note": "Available for the MBA program only; a student can avail benefit under one scholarship category at a time.",
+      "renewal_conditions": ["Good conduct", "No disciplinary action", "Maintain prescribed academic performance each year"]
+    },
+    {
+      "id": "mba-merit-cum-means",
+      "data_source": "verified",
+      "program": "MBA (Institute of Management)",
+      "category": "Merit-cum-Means Scholarship",
+      "basis": "Combination of merit and family income",
+      "note": "No separate scholarship scheme exists for reserved-category students; awards are based purely on merit and family income."
+    },
+    {
+      "id": "bba-mba-integrated-scholarship",
+      "data_source": "verified",
+      "program": "Integrated BBA-MBA (Institute of Management)",
+      "category": "Phase-wise Merit / Merit-cum-Means Scholarship",
+      "benefit_range": "Rs. 50,000 to Rs. 2,00,000 depending on category and phase (BBA phase or MBA phase)",
+      "note": "Separate scholarships exist for the BBA-phase and MBA-phase of the integrated program."
+    },
+    {
+      "id": "law-merit-scholarship",
+      "data_source": "verified",
+      "program": "Institute of Law (ILNU)",
+      "category": "Merit-based scholarship (top 10 per batch)",
+      "benefit": "Up to 100% fee waiver for the highest-ranked student, tiered down for others in the top 10",
+      "basis": "Academic merit within the batch"
+    },
+    {
+      "id": "law-merit-cum-means-scholarship",
+      "data_source": "verified",
+      "program": "Institute of Law (ILNU)",
+      "category": "Merit-cum-Means scholarship (top 10 per batch)",
+      "basis": "Merit combined with family income consideration",
+      "benefit": "Up to 50% fee waiver depending on rank"
+    },
+    {
+      "id": "law-performance-scholarship",
+      "data_source": "verified",
+      "program": "Institute of Law (ILNU)",
+      "category": "Semester Topper / Performance-based Scholarship",
+      "basis": "Top performance in a given semester",
+      "note": "Awarded on a semester-by-semester basis to toppers."
+    },
+    {
+      "id": "law-clat-scholarship",
+      "data_source": "verified",
+      "program": "Institute of Law (ILNU)",
+      "category": "CLAT Top-Rank Scholarship",
+      "basis": "Top ranks in CLAT (Common Law Admission Test)",
+      "benefit": "Up to 100% fee waiver for top CLAT performers"
+    },
+    {
+      "id": "law-idia-scholarship",
+      "data_source": "verified",
+      "program": "Institute of Law (ILNU)",
+      "category": "IDIA (Increasing Diversity by Increasing Access) Scholarship",
+      "basis": "Supports students from underprivileged backgrounds through the IDIA program",
+      "benefit": "Full course fee coverage for selected IDIA scholars"
+    },
+    {
+      "id": "law-need-based-concession",
+      "data_source": "verified",
+      "program": "Institute of Law (ILNU)",
+      "category": "Economically Disadvantaged Student Concession",
+      "eligibility": "Annual family income below Rs. 1 Lakh",
+      "benefit": "Fee concessions plus a monthly scholarship of approximately Rs. 1,500"
+    },
+    {
+      "id": "needy-students-fund",
+      "data_source": "verified",
+      "program": "All programs (university-wide)",
+      "category": "Needy Students' Fund",
+      "note": "A general-purpose fund for students facing financial hardship who are not covered by any other scholarship. Students should approach their respective Director/Head of Institute to be considered.",
+      "eligibility": "Demonstrated financial need not addressed by existing scholarships"
+    },
+    {
+      "id": "doctoral-jrf-srf-fellowship",
+      "data_source": "verified",
+      "program": "PhD (Institute of Doctoral Studies and Research)",
+      "category": "Junior/Senior Research Fellowship",
+      "benefit": "JRF-equivalent stipend for the first two years, SRF-equivalent stipend in the third year",
+      "obligation": "Approximately 8 hours per week of assigned academic/research work",
+      "eligibility": "Admission to PhD program and fulfilment of JRF eligibility norms"
+    },
+    {
+      "id": "international-exchange-scholarship-example",
+      "data_source": "verified",
+      "program": "International exchange / research collaboration",
+      "category": "Third-party international scholarship example: Royal Society International Exchange Programme",
+      "note": "Not a Nirma-specific scholarship, but an external international scholarship that Nirma-affiliated students/researchers may be eligible to apply for in Natural Sciences.",
+      "benefit": "GBP 12,000 (partial funding)",
+      "eligibility": "Open to all nationalities; for research exchange at UK/overseas institutions",
+      "typical_deadline": "Late September each cycle (verify current-year date on Royal Society's site)"
+    },
+    {
+      "id": "pharmacy-merit-scholarship-synthetic",
+      "data_source": "synthetic",
+      "program": "B.Pharm / M.Pharm (Institute of Pharmacy)",
+      "category": "Illustrative Merit Scholarship",
+      "note": "No official public breakdown was found for Pharmacy scholarships at the time of compilation; this entry is a plausible placeholder modeled on the B.Tech scheme, for training diversity only.",
+      "hypothetical_benefit": "Up to 50% tuition fee waiver for top rankers by GUJCET/NEET score, subject to CGPA >= 7.0 renewal criterion",
+      "verify_with": "Institute of Pharmacy admission office"
+    },
+    {
+      "id": "architecture-merit-scholarship-synthetic",
+      "data_source": "synthetic",
+      "program": "B.Arch (Institute of Architecture and Planning)",
+      "category": "Illustrative Merit Scholarship",
+      "note": "Placeholder entry; no official figures found. Structure assumed similar to other institutes' merit-based waivers.",
+      "hypothetical_benefit": "Partial tuition waiver for top NATA/JEE-Paper2 scorers",
+      "verify_with": "Institute of Architecture and Planning admission office"
+    }
+  ],
+
+  "how_to_apply": {
+    "data_source": "verified",
+    "general_process": [
+      "Identify your target program (B.Tech, MBA, Law, etc.) and check the relevant entrance exam requirement (JEE Main for B.Tech, GUJCET/ACPC for state quota, IPMAT for Integrated BBA-MBA, CLAT for Law, GATE for M.Tech, etc.).",
+      "Register and fill the online application on the Nirma admissions portal (admissions.nirmauni.ac.in) or the specific institute's admission page.",
+      "Pay the non-refundable online application fee via Credit Card/Debit Card/Net Banking.",
+      "Upload required documents (mark sheets, entrance exam scorecard, category/income certificates if applicable).",
+      "Wait for the merit list / rank-based shortlist to be declared on the login dashboard.",
+      "Attend counselling (in-person or online, depending on category) and select an admission option (A/B/C/D) within the stipulated time.",
+      "Pay tuition and other fees online within the deadline to confirm the seat.",
+      "Report in person with original documents for verification on the notified date.",
+      "Scholarships in Categories I-III for B.Tech are auto-considered based on your entrance rank/category at the time of admission; no separate scholarship application form is typically required, but always confirm with the concerned institute since some scholarships (e.g., Needy Students' Fund, EWYL) require a separate request/application to the Director/HoI."
+    ],
+    "application_fee": {
+      "gujarat_board_candidates": "Rs. 350 (non-refundable)",
+      "outside_gujarat_board_candidates": "Rs. 1200 (non-refundable)"
+    },
+    "documents_typically_needed_synthetic": [
+      "10th and 12th mark sheets",
+      "Entrance exam admit card and scorecard (JEE/GUJCET/CLAT/IPMAT/GATE as applicable)",
+      "Category certificate (SC/ST/SEBC/EWS) if claiming reservation",
+      "Income certificate for merit-cum-means scholarships",
+      "Passport-size photographs",
+      "Aadhaar card / valid ID proof",
+      "Migration/transfer certificate at the time of physical reporting"
+    ]
+  },
+
+  "doubt_resolution_contacts": {
+    "data_source": "verified",
+    "btech_ug_admission_office": {
+      "office_name": "UG Admission Committee, Institute of Technology",
+      "address": "ID-210, ID Block, Nirma University Campus, Sarkhej-Gandhinagar Highway, Ahmedabad - 382481, Gujarat, India",
+      "phone": ["079-71652585", "+91-8448448565", "+91-79-71652000"],
+      "email": "ugadmissions.it@nirmauni.ac.in",
+      "office_hours": "11:00 AM - 3:00 PM (Monday to Friday); 9:00 AM - 1:00 PM (odd Saturdays)"
+    },
+    "general_admissions_helpline_synthetic": {
+      "data_source": "synthetic",
+      "note": "Illustrative general helpline; use the verified B.Tech contact above or the specific institute's page for authoritative numbers.",
+      "phone": "+91-79-71652000 (general university switchboard, verify extension per institute)"
+    },
+    "institute_specific_contacts_guidance": {
+      "data_source": "verified",
+      "note": "Each constituent institute (Management, Law, Pharmacy, Science, Architecture, Commerce, Design, Doctoral Studies) maintains its own admissions/financial-aid page and contact under the pattern <institute>.nirmauni.ac.in, e.g. management.nirmauni.ac.in for MBA/BBA queries.",
+      "examples": [
+        {"institute": "Institute of Management", "url": "https://management.nirmauni.ac.in/admission-aid/financial-aid/scholarships/"},
+        {"institute": "Institute of Technology", "url": "https://technology.nirmauni.ac.in/admission-aid/under-graduate/b-tech/"}
+      ]
+    },
+    "pio_gulf_quota_query": {
+      "data_source": "verified",
+      "note": "For PIO/OCI/Foreign National/Children of Indian Workers in Gulf Countries quota queries, contact the Assistant Registrar (Academic) at Nirma University directly."
+    }
+  },
+
+  "faq": [
+    {
+      "data_source": "verified",
+      "question": "Do I need my JEE (Main) All India Rank at the time of submitting the B.Tech application?",
+      "answer": "No. You can submit the application before your JEE (Main) rank is declared, but you must enter your correct JEE (Main) application number, roll number, and date of birth as per your admit card."
+    },
+    {
+      "data_source": "verified",
+      "question": "Can a diploma holder get lateral entry into B.Tech at Nirma?",
+      "answer": "Lateral entry (Diploma-to-Degree) admissions are governed by ACPC (Admission Committee for Professional Courses), Government of Gujarat, not directly by the university. Follow ACPC's announced schedule and instructions."
+    },
+    {
+      "data_source": "verified",
+      "question": "Is on-campus hostel available for B.Tech students?",
+      "answer": "No, at present Nirma University does not provide on-campus hostel facilities for B.Tech students; hostels are available for postgraduate program students. Guidance for off-campus accommodation is provided."
+    },
+    {
+      "data_source": "verified",
+      "question": "Can I hold a Nirma scholarship together with the Gujarat government's MYSY scholarship?",
+      "answer": "No. Students receiving MYSY are not eligible for Nirma's own merit/merit-cum-means scholarships. Instead they can get supplementary support (up to Rs. 50,000/year) toward exam fees, books, and transport."
+    },
+    {
+      "data_source": "verified",
+      "question": "Is there a dedicated scholarship for SC/ST students at the Institute of Management?",
+      "answer": "No separate scheme exists for reserved-category students at IMNU; MBA/BBA scholarships are awarded purely on merit and family income (merit-cum-means), regardless of category."
+    },
+    {
+      "data_source": "synthetic",
+      "question": "Can I combine a Nirma merit scholarship with a private/external scholarship (e.g., a corporate CSR scholarship)?",
+      "answer": "This is not explicitly documented publicly; general renewal policy for several programs states a student should not be receiving a scholarship from another agency simultaneously, so external scholarships likely need to be disclosed and may disqualify continuation. Confirm in writing with your institute's admission office before accepting an external award."
+    }
+  ]
+}

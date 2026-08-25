@@ -1,0 +1,61 @@
+{
+  "institute": "Institute of Technology, Nirma University (ITNU)",
+  "sources": [
+    "https://technology.nirmauni.ac.in/placement/placement-cell/placement-statistics/",
+    "https://collegedunia.com/college/24100-institute-of-technology-nirma-university-ahmedabad/placement",
+    "https://www.shiksha.com/college/institute-of-technology-nirma-university-s-g-highway-ahmedabad-29753/placement",
+    "https://www.shiksha.com/university/nirma-university-ahmedabad-30302/placement"
+  ],
+  "caveat": "Official ITNU page only publishes headline highest-package figures. Year-wise averages/medians and branch splits below are aggregated from third-party placement-reporting sites (CollegeDunia, Shiksha, Careers360) and may not perfectly agree with each other or with the final official report — cross-check with the official 'Placement Statistics' page before using in production.",
+  "btech_year_wise": [
+    {
+      "year": "2025-26",
+      "highest_package_lpa": 94.13,
+      "highest_recruiter": "LinkedIn Technology Information Pvt Ltd",
+      "average_package_lpa": 9.28,
+      "companies_visited": "230+",
+      "offers_extended": "600+",
+      "placement_percentage": "90%",
+      "note": "students opting for higher studies: 300+"
+    },
+    {
+      "year": "2024-25",
+      "highest_package_lpa": 72.04,
+      "highest_recruiter": "Google IT Services India Pvt Ltd",
+      "highest_branch": "ECE",
+      "placement_percentage_range": "83%-97% across BTech branches",
+      "companies_visited_last_5_years_cumulative": 1130,
+      "median_package_high_watermark_lpa": 7
+    },
+    {
+      "year": "2023-24",
+      "highest_package_lpa": 52.69,
+      "highest_branch": "CSE",
+      "average_package_lpa": 8,
+      "placement_percentage_by_branch": {
+        "CSE": "96%",
+        "EIE": "95%",
+        "ME": "95%",
+        "ECE": "85%",
+        "Chemical": "83%",
+        "Civil": "80%",
+        "Electrical": "80%"
+      },
+      "students_opted_higher_studies": "300+"
+    },
+    {
+      "year": "2022-23 (approx, third-party)",
+      "highest_package_lpa": 46.47,
+      "highest_recruiter": "Atlassian Corporation",
+      "highest_branch": "Civil Engineering",
+      "average_package_lpa": 7.11
+    }
+  ],
+  "top_recruiters_mentioned": ["Google", "LinkedIn", "Amazon", "Microsoft", "Nvidia", "JP Morgan", "Infosys", "TCS", "Atlassian", "Deutsche Bank"],
+  "mtech_mca_notes": [
+    "2025 drive: 100% placement in Cyber Security branch (MTech).",
+    "Construction Technology Management and VLSI MTech branches: 90%+ placement.",
+    "2023: highest PG package reported at INR 20.46 LPA."
+  ],
+  "cse_department_note": "CSE department maintains its own placement page (cse.nirmauni.ac.in/students/placements/) with dedicated 'last three years' data and a faculty placement coordinator, Dr. Jaiprakash Verma."
+}

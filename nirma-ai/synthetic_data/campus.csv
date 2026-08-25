@@ -1,0 +1,5 @@
+facility_id,name,category,building,location,description,working_hours,contact
+F001,Central Library,Library,Main Block,Ground Floor,University central library with 100k+ books,8 AM - 8 PM,library@nirma.edu
+F002,AI Innovation Lab,Laboratory,CSE Block,First Floor,High-performance computing lab for AI/ML,9 AM - 6 PM,ailab@nirma.edu
+F003,Sports Complex,Sports,Sports Wing,Campus Rear,"Cricket, Basketball, and Indoor sports",6 AM - 8 PM,sports@nirma.edu
+F004,Student Canteen,Cafeteria,Main Block,Basement,Multi-cuisine student food court,8 AM - 7 PM,

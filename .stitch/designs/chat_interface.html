@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NirmaAI Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf8ff",
+                        "on-tertiary-fixed-variant": "#5d4200",
+                        "on-primary-container": "#00422b",
+                        "inverse-primary": "#4edea3",
+                        "on-secondary-container": "#007353",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffdea6",
+                        "primary-fixed": "#6ffbbe",
+                        "on-surface-variant": "#3c4a42",
+                        "on-primary-fixed-variant": "#005236",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#4c3500",
+                        "on-error": "#ffffff",
+                        "outline": "#6c7a71",
+                        "surface-container-low": "#f5f2ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#7b5804",
+                        "on-primary-fixed": "#002113",
+                        "inverse-surface": "#2f2e43",
+                        "surface-dim": "#dad7f3",
+                        "secondary-fixed": "#97f5cc",
+                        "outline-variant": "#bbcabf",
+                        "surface-container-highest": "#e2e0fc",
+                        "inverse-on-surface": "#f2efff",
+                        "primary": "#006c49",
+                        "tertiary-fixed-dim": "#eec068",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#efecff",
+                        "on-background": "#1a1a2e",
+                        "surface-container-high": "#e8e5ff",
+                        "tertiary-container": "#c79c48",
+                        "on-secondary-fixed-variant": "#00513a",
+                        "on-tertiary-fixed": "#271900",
+                        "on-surface": "#1a1a2e",
+                        "surface-variant": "#e2e0fc",
+                        "background": "#fcf8ff",
+                        "secondary-container": "#97f5cc",
+                        "surface-tint": "#006c49",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#10b981",
+                        "surface-bright": "#fcf8ff",
+                        "secondary": "#006c4e",
+                        "on-secondary-fixed": "#002115",
+                        "primary-fixed-dim": "#4edea3",
+                        "secondary-fixed-dim": "#7bd8b1"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px",
+                        "2xl": "1rem"
+                    },
+                    spacing: {
+                        "stack-md": "24px",
+                        "container-padding-desktop": "40px",
+                        "unit": "8px",
+                        "stack-lg": "48px",
+                        "container-padding-mobile": "20px",
+                        "gutter": "24px",
+                        "stack-sm": "12px"
+                    },
+                    fontFamily: {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Plus Jakarta Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "display-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.08em", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }]
+                    },
+                    boxShadow: {
+                        'whisper': '0px 4px 20px rgba(26, 26, 46, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: rgba(108, 122, 113, 0.2);
+            border-radius: 10px;
+        }
+        .chat-container {
+            height: calc(100vh - 72px - 90px); /* Adjust for header and input area */
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface h-screen flex flex-col overflow-hidden">
+<!-- TopNav Navigation Component -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/10 shadow-whisper h-[72px]">
+<div class="flex justify-between items-center px-container-padding-desktop h-full w-full">
+<div class="flex items-center gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 flex items-center justify-center p-2 rounded-full hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</a>
+<h1 class="font-display-lg-mobile text-headline-md bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent truncate">NirmaAI Chat</h1>
+</div>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-full border border-primary text-primary font-label-caps hover:bg-primary/5 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                New Chat
+            </button>
+</div>
+</nav>
+<!-- Main Content Layout -->
+<div class="flex flex-1 pt-[72px] h-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col w-[280px] bg-surface-container-lowest border-r border-outline-variant/10 h-full">
+<div class="p-6 flex-1 overflow-y-auto custom-scrollbar">
+<!-- Section 1 -->
+<div class="mb-8">
+<h3 class="font-label-caps text-primary-container mb-3 uppercase tracking-wider">Faculty</h3>
+<ul class="space-y-1">
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                Who is the HoD of CSE?
+                            </button>
+</li>
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                Find AI/ML researchers
+                            </button>
+</li>
+</ul>
+</div>
+<!-- Section 2 -->
+<div class="mb-8">
+<h3 class="font-label-caps text-primary-container mb-3 uppercase tracking-wider">Placements</h3>
+<ul class="space-y-1">
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                Highest package 2025-26?
+                            </button>
+</li>
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                Top recruiting companies
+                            </button>
+</li>
+</ul>
+</div>
+<!-- Section 3 -->
+<div class="mb-8">
+<h3 class="font-label-caps text-primary-container mb-3 uppercase tracking-wider">Fees &amp; Admissions</h3>
+<ul class="space-y-1">
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                BTech annual fees?
+                            </button>
+</li>
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                NRI quota fees?
+                            </button>
+</li>
+</ul>
+</div>
+<!-- Section 4 -->
+<div class="mb-8">
+<h3 class="font-label-caps text-primary-container mb-3 uppercase tracking-wider">Campus Life</h3>
+<ul class="space-y-1">
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                Library timings?
+                            </button>
+</li>
+<li>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-md text-on-surface-variant hover:bg-[#f0fdf4] hover:text-primary transition-colors truncate">
+                                Sports facilities?
+                            </button>
+</li>
+</ul>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant/10">
+<a class="flex items-center text-primary hover:text-primary-container transition-colors font-body-md font-semibold" href="#">
+                    Campus Map 
+                    <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</aside>
+<!-- Chat Area -->
+<main class="flex-1 flex flex-col relative bg-surface">
+<!-- Messages Container -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-container-padding-desktop">
+<div class="max-w-[800px] mx-auto space-y-stack-md pb-[120px]"> <!-- extra padding bottom for fixed input -->
+<!-- Bot Welcome -->
+<div class="flex items-start gap-4 max-w-[85%]">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="bg-[#f0fdf4] rounded-2xl rounded-tl-sm p-4 shadow-whisper">
+<p class="text-on-surface-variant">Hello! I'm NirmaAI, your intelligent campus companion. Ask me anything about Nirma University — placements, faculty, fees, courses, or campus life. All my answers are grounded in verified university data.</p>
+</div>
+</div>
+<!-- User Message 1 -->
+<div class="flex items-start gap-4 justify-end">
+<div class="bg-primary-container text-white rounded-2xl rounded-tr-sm p-4 shadow-whisper max-w-[85%]">
+<p>What was the highest placement package in 2025-26?</p>
+</div>
+</div>
+<!-- Bot Response 1 -->
+<div class="flex items-start gap-4 max-w-[90%] md:max-w-[85%]">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="bg-[#f0fdf4] rounded-2xl rounded-tl-sm p-5 shadow-whisper">
+<h4 class="font-headline-md text-on-surface mb-2">₹94.13 LPA by LinkedIn</h4>
+<p class="text-on-surface-variant mb-4">was the highest package offered during the 2025-26 placement season at ITNU.</p>
+<div class="space-y-2 mb-4">
+<p class="text-sm text-on-surface-variant font-semibold">Key stats:</p>
+<ul class="list-disc list-inside text-on-surface-variant text-sm ml-2">
+<li>Average Package: ₹9.28 LPA</li>
+<li>Companies Visited: 230+</li>
+<li>Total Offers: 600+</li>
+</ul>
+</div>
+<div class="flex flex-wrap items-center gap-3 pt-3 border-t border-outline-variant/20">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/30 text-xs text-primary bg-primary/5">
+<span class="material-symbols-outlined text-[14px]" data-icon="description">description</span>
+                                    placements.json → 2025-26
+                                </span>
+<span class="text-[10px] text-outline uppercase tracking-wider font-semibold">Powered by Groq</span>
+</div>
+</div>
+</div>
+<!-- User Message 2 -->
+<div class="flex items-start gap-4 justify-end">
+<div class="bg-primary-container text-white rounded-2xl rounded-tr-sm p-4 shadow-whisper max-w-[85%]">
+<p>Who is the head of CSE department?</p>
+</div>
+</div>
+<!-- Bot Response 2 -->
+<div class="flex items-start gap-4 max-w-[90%] md:max-w-[85%]">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="bg-[#f0fdf4] rounded-2xl rounded-tl-sm p-5 shadow-whisper">
+<p class="text-on-surface-variant mb-3">The Head of Department for Computer Science &amp; Engineering (CSE) at ITNU is <strong class="text-on-surface">Dr. Ankit Thakkar</strong>.</p>
+<div class="bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/20 mb-4">
+<p class="text-sm text-on-surface-variant"><strong class="text-on-surface">Qualification:</strong> PhD</p>
+<p class="text-sm text-on-surface-variant mt-1"><strong class="text-on-surface">Specialization:</strong> Wireless Sensor Networks, Machine Learning &amp; Deep Learning</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-primary/30 text-xs text-primary bg-primary/5">
+<span class="material-symbols-outlined text-[14px]" data-icon="description">description</span>
+                                    faculty.json → CSE
+                                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="absolute bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-outline-variant/10 p-4 z-10">
+<div class="max-w-[800px] mx-auto">
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full py-4 pl-6 pr-14 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary shadow-sm transition-shadow" placeholder="Ask about placements, faculty, fees..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-primary-container rounded-full flex items-center justify-center text-white hover:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+</button>
+</div>
+<p class="text-center text-[11px] text-outline mt-3">
+                        Responses are grounded in verified Nirma University data
+                    </p>
+</div>
+</div>
+</main>
+</div>
+</body></html>

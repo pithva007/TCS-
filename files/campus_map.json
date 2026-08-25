@@ -1,0 +1,173 @@
+{
+  "institute": "Nirma University, Ahmedabad",
+  "campus_center": {
+    "latitude": 23.1332,
+    "longitude": 72.5413,
+    "zoom_default": 16.5
+  },
+  "note": "Coordinates are approximate positions for campus navigation. Update with GPS-verified values.",
+  "buildings": [
+    {
+      "id": "admin",
+      "name": "Administrative Block",
+      "category": "administration",
+      "latitude": 23.1345,
+      "longitude": 72.5418,
+      "floor_count": 3,
+      "description": "Central administration, admissions office, examination cell, and registrar.",
+      "facilities": ["Admissions Office", "Exam Cell", "Registrar", "Vice Chancellor Office"]
+    },
+    {
+      "id": "itnu_main",
+      "name": "Institute of Technology (ITNU) - Main Block",
+      "category": "academic",
+      "latitude": 23.1338,
+      "longitude": 72.5415,
+      "floor_count": 5,
+      "description": "Primary engineering block housing CSE, ECE, Electrical, and E&I departments. Includes lecture halls, labs, and faculty offices.",
+      "departments": ["Computer Science & Engineering", "Electronics & Communication", "Electrical Engineering", "Electronics & Instrumentation"],
+      "facilities": ["Computer Labs", "Project Labs", "Seminar Halls", "Faculty Offices"]
+    },
+    {
+      "id": "itnu_mech",
+      "name": "ITNU - Mechanical & Civil Block",
+      "category": "academic",
+      "latitude": 23.1335,
+      "longitude": 72.5408,
+      "floor_count": 4,
+      "description": "Engineering block for Mechanical, Civil, and Chemical Engineering departments with specialized workshops and labs.",
+      "departments": ["Mechanical Engineering", "Civil Engineering", "Chemical Engineering"],
+      "facilities": ["Workshop", "Material Testing Lab", "Hydraulics Lab", "CAD Lab"]
+    },
+    {
+      "id": "imnu",
+      "name": "Institute of Management (IMNU)",
+      "category": "academic",
+      "latitude": 23.1342,
+      "longitude": 72.5405,
+      "floor_count": 4,
+      "description": "Management institute offering MBA programs. Includes case study rooms, Bloomberg terminal lab, and auditorium.",
+      "facilities": ["Case Study Rooms", "Bloomberg Lab", "Mini Auditorium", "Placement Cell"]
+    },
+    {
+      "id": "iop",
+      "name": "Institute of Pharmacy (IOP)",
+      "category": "academic",
+      "latitude": 23.1325,
+      "longitude": 72.5420,
+      "floor_count": 3,
+      "description": "Pharmacy institute with research labs, drug formulation center, and herbal garden.",
+      "facilities": ["Pharma Research Lab", "Drug Formulation Center", "Herbal Garden"]
+    },
+    {
+      "id": "ios",
+      "name": "Institute of Science (IOS)",
+      "category": "academic",
+      "latitude": 23.1328,
+      "longitude": 72.5408,
+      "floor_count": 3,
+      "description": "Science institute offering programs in Physics, Chemistry, Mathematics, and Biotechnology.",
+      "facilities": ["Advanced Physics Lab", "Chemistry Lab", "Biotech Research Center"]
+    },
+    {
+      "id": "iol",
+      "name": "Institute of Law (IOL)",
+      "category": "academic",
+      "latitude": 23.1348,
+      "longitude": 72.5405,
+      "floor_count": 3,
+      "description": "Law institute with moot court hall, legal aid clinic, and dedicated law library.",
+      "facilities": ["Moot Court Hall", "Legal Aid Clinic", "Law Library"]
+    },
+    {
+      "id": "library",
+      "name": "Central Library",
+      "category": "facility",
+      "latitude": 23.1332,
+      "longitude": 72.5413,
+      "floor_count": 3,
+      "description": "Multi-floor central library with 100,000+ volumes, digital resource center, silent study zones, and group discussion rooms.",
+      "working_hours": "8:00 AM - 10:00 PM (Mon-Sat), 9:00 AM - 5:00 PM (Sun)",
+      "facilities": ["Digital Resource Center", "Silent Study Zone", "Group Discussion Rooms", "Periodical Section"]
+    },
+    {
+      "id": "sports",
+      "name": "Sports Complex",
+      "category": "facility",
+      "latitude": 23.1320,
+      "longitude": 72.5425,
+      "floor_count": 2,
+      "description": "Multi-sport facility with cricket ground, indoor badminton courts, gym, swimming pool, and athletics track.",
+      "facilities": ["Cricket Ground", "Indoor Badminton", "Gymnasium", "Swimming Pool", "Athletics Track"]
+    },
+    {
+      "id": "auditorium",
+      "name": "University Auditorium",
+      "category": "facility",
+      "latitude": 23.1340,
+      "longitude": 72.5422,
+      "floor_count": 2,
+      "description": "2000-seat auditorium for convocations, tech fests, cultural events, and guest lectures.",
+      "capacity": 2000,
+      "facilities": ["Main Hall", "Green Room", "AV Control Room"]
+    },
+    {
+      "id": "canteen_main",
+      "name": "Main Canteen & Food Court",
+      "category": "amenity",
+      "latitude": 23.1330,
+      "longitude": 72.5410,
+      "floor_count": 1,
+      "description": "Central food court with multiple vendor stalls, seating for 500+, and hygienic kitchen facilities.",
+      "working_hours": "7:30 AM - 8:30 PM",
+      "facilities": ["Food Stalls", "Juice Bar", "Seating Area"]
+    },
+    {
+      "id": "placement_cell",
+      "name": "Industry-Institute Interaction Cell (IIIC)",
+      "category": "administration",
+      "latitude": 23.1336,
+      "longitude": 72.5420,
+      "floor_count": 1,
+      "description": "Central placement cell coordinating campus recruitment, internships, and industry partnerships. Contact: iiicell@nirmauni.ac.in",
+      "contacts": ["Dr. K. M. Patel", "Sunil Pandi", "Nilang Vayeda", "Anant Jha"],
+      "facilities": ["Interview Rooms", "Group Discussion Rooms", "Pre-Placement Talk Hall"]
+    },
+    {
+      "id": "hostel_pg",
+      "name": "PG Hostel Complex",
+      "category": "residential",
+      "latitude": 23.1315,
+      "longitude": 72.5415,
+      "floor_count": 4,
+      "description": "On-campus hostel for M.Tech, MCA, and PhD students. B.Tech students use nearby off-campus PG accommodations.",
+      "facilities": ["Mess Hall", "Common Room", "Laundry", "Wi-Fi"]
+    },
+    {
+      "id": "parking",
+      "name": "Main Parking Area",
+      "category": "amenity",
+      "latitude": 23.1350,
+      "longitude": 72.5420,
+      "floor_count": 1,
+      "description": "Open parking with designated areas for two-wheelers, four-wheelers, and university bus bay.",
+      "facilities": ["Two-Wheeler Parking", "Car Parking", "Bus Bay"]
+    },
+    {
+      "id": "gate_main",
+      "name": "Main Entrance Gate",
+      "category": "landmark",
+      "latitude": 23.1355,
+      "longitude": 72.5418,
+      "floor_count": 1,
+      "description": "Primary campus entrance with security checkpoint. Landmark for directions.",
+      "facilities": ["Security Office", "Visitor Registration"]
+    }
+  ],
+  "navigation_notes": [
+    "University bus service available from SG Highway and major city points.",
+    "Nearest BRTS stop: Nirma University (500m from main gate).",
+    "Nearest metro station: Doordarshan Kendra (under construction, ~2km).",
+    "Auto-rickshaw and ride-share available at main gate."
+  ]
+}
