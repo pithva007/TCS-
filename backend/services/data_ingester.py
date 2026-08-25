@@ -5,8 +5,10 @@ from pathlib import Path
 import chromadb
 from sentence_transformers import SentenceTransformer
 
-# Initialize ChromaDB client and embedding model
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
+# Resolve storage relative to this repository so local and deployed runs use the same data.
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_DATA_DIR = REPO_ROOT / "files"
+chroma_client = chromadb.PersistentClient(path=str(REPO_ROOT / "backend" / "chroma_db"))
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 def get_collection():
@@ -456,7 +458,7 @@ def ingest_file(file_path: str):
 
 def ingest_all():
     """Re-ingest all JSON files. Deletes and rebuilds the collection."""
-    data_dir = os.getenv("DATA_DIR", "/Users/jaimin/FAQ CHATBOT/files/")
+    data_dir = os.getenv("DATA_DIR", str(DEFAULT_DATA_DIR))
     print(f"\n🔄 Starting full data ingestion from: {data_dir}")
 
     try:

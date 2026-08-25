@@ -13,6 +13,8 @@ load_dotenv()
 
 from services import data_ingester, data_watcher, rag_engine, failover_llm, guardrails, analytics
 
+DATA_DIR = os.getenv("DATA_DIR", str(data_ingester.DEFAULT_DATA_DIR))
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Initial data ingestion
@@ -44,7 +46,7 @@ async def chat(req: ChatRequest):
     if not guard["is_safe"]:
         raise HTTPException(status_code=400, detail=guard["rejection_reason"])
         
-    context_chunks, prompt, sources = rag_engine.query_rag(guard["sanitized_query"])
+    context_chunks, prompt, sources, confidence = rag_engine.query_rag(guard["sanitized_query"])
     llm_res = await failover_llm.call_llm(prompt)
     
     safe_answer = guardrails.verify_output(llm_res["answer"], context_chunks)
@@ -60,13 +62,13 @@ async def chat(req: ChatRequest):
         "answer": safe_answer,
         "sources": sources,
         "tier_used": llm_res["tier_used"],
-        "confidence": 0.95
+        "confidence": confidence
     }
 
 @app.get("/api/health")
 async def health():
     stats = data_ingester.get_stats()
-    data_dir = os.getenv("DATA_DIR", "/Users/jaimin/FAQ CHATBOT/files/")
+    data_dir = DATA_DIR
     files = [f for f in os.listdir(data_dir) if f.endswith(".json")] if os.path.exists(data_dir) else []
     
     return {
@@ -82,7 +84,7 @@ async def get_analytics_summary():
 
 @app.get("/api/campus/buildings")
 async def get_campus_buildings():
-    data_dir = os.getenv("DATA_DIR", "/Users/jaimin/FAQ CHATBOT/files/")
+    data_dir = DATA_DIR
     buildings = []
 
     # 1. Load buildings from campus_map.json
@@ -150,7 +152,7 @@ async def websocket_chat(websocket: WebSocket):
                 await websocket.send_json({"chunk": f"Error: {guard['rejection_reason']}", "done": True, "sources": []})
                 continue
                 
-            context_chunks, prompt, sources = rag_engine.query_rag(guard["sanitized_query"])
+            context_chunks, prompt, sources, confidence = rag_engine.query_rag(guard["sanitized_query"])
             
             async for chunk in failover_llm.stream_llm(prompt):
                 await websocket.send_json({"chunk": chunk, "done": False, "sources": sources})
