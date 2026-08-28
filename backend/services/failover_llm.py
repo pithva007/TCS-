@@ -11,6 +11,16 @@ CEREBRAS_MODEL = "gpt-oss-120b"
 GEMINI_MODEL = "gemini-2.5-flash"
 
 
+def _api_key(name: str) -> str | None:
+    """Read the configured key, accepting the project's numbered fallback keys."""
+    for candidate in (name, f"{name}_2"):
+        value = os.getenv(candidate, "").strip()
+        # Do not treat JavaScript expressions copied into .env as credentials.
+        if value and not value.startswith("process.env."):
+            return value
+    return None
+
+
 async def call_llm(prompt: str):
     """Call LLM with 3-tier failover: Groq → Cerebras → Gemini.
     
@@ -30,7 +40,7 @@ async def call_llm(prompt: str):
         user_msg = prompt
 
     # ── Tier 1: Groq (Qwen 3) ──────────────────────────────
-    groq_key = os.getenv("GROQ_API_KEY")
+    groq_key = _api_key("GROQ_API_KEY")
     if groq_key:
         try:
             groq_client = AsyncGroq(api_key=groq_key)
@@ -60,7 +70,7 @@ async def call_llm(prompt: str):
             print(f"⚠️  Groq failed: {e}")
 
     # ── Tier 2: Cerebras (GPT-OSS 120B) ────────────────────
-    cerebras_key = os.getenv("CEREBRAS_API_KEY")
+    cerebras_key = _api_key("CEREBRAS_API_KEY")
     if cerebras_key:
         try:
             cerebras_client = AsyncCerebras(api_key=cerebras_key)
@@ -85,7 +95,7 @@ async def call_llm(prompt: str):
             print(f"⚠️  Cerebras failed: {e}")
 
     # ── Tier 3: Gemini (2.5 Flash) ──────────────────────────
-    gemini_key = os.getenv("GEMINI_API_KEY")
+    gemini_key = _api_key("GEMINI_API_KEY")
     if gemini_key:
         try:
             client = genai.Client(api_key=gemini_key)
@@ -130,7 +140,7 @@ async def stream_llm(prompt: str):
         user_msg = prompt
 
     # Try streaming with Groq first
-    groq_key = os.getenv("GROQ_API_KEY")
+    groq_key = _api_key("GROQ_API_KEY")
     if groq_key:
         try:
             groq_client = AsyncGroq(api_key=groq_key)

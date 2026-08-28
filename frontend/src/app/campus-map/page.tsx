@@ -57,8 +57,7 @@ export default function CampusMapPage() {
       center: NIRMA_COORDS,
       zoom: 16.5,
       pitch: 45,
-      bearing: -17.6,
-      antialias: true
+      bearing: -17.6
     });
 
     map.current.addControl(new maplibregl.NavigationControl(), "top-right");

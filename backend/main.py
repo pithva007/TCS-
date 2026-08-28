@@ -8,10 +8,27 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import uvicorn
 from contextlib import asynccontextmanager
+from pathlib import Path
 
-load_dotenv()
+BACKEND_DIR = Path(__file__).resolve().parent
+REPO_ROOT = BACKEND_DIR.parent
+load_dotenv(BACKEND_DIR / ".env")
+load_dotenv(REPO_ROOT / ".env")
 
 from services import data_ingester, data_watcher, rag_engine, failover_llm, guardrails, analytics
+
+
+def resolve_data_dir() -> str:
+    configured = os.getenv("DATA_DIR", "").strip()
+    candidate = Path(configured).expanduser() if configured else data_ingester.DEFAULT_DATA_DIR
+    # Ignore stale absolute paths from another machine and use repository data.
+    if not candidate.is_dir() or not any(candidate.glob("*.json")):
+        candidate = data_ingester.DEFAULT_DATA_DIR
+    return str(candidate)
+
+
+DATA_DIR = resolve_data_dir()
+os.environ["DATA_DIR"] = DATA_DIR
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -44,7 +61,7 @@ async def chat(req: ChatRequest):
     if not guard["is_safe"]:
         raise HTTPException(status_code=400, detail=guard["rejection_reason"])
         
-    context_chunks, prompt, sources = rag_engine.query_rag(guard["sanitized_query"])
+    context_chunks, prompt, sources, confidence = rag_engine.query_rag(guard["sanitized_query"])
     llm_res = await failover_llm.call_llm(prompt)
     
     safe_answer = guardrails.verify_output(llm_res["answer"], context_chunks)
@@ -60,13 +77,13 @@ async def chat(req: ChatRequest):
         "answer": safe_answer,
         "sources": sources,
         "tier_used": llm_res["tier_used"],
-        "confidence": 0.95
+        "confidence": confidence
     }
 
 @app.get("/api/health")
 async def health():
     stats = data_ingester.get_stats()
-    data_dir = os.getenv("DATA_DIR", "/Users/jaimin/FAQ CHATBOT/files/")
+    data_dir = DATA_DIR
     files = [f for f in os.listdir(data_dir) if f.endswith(".json")] if os.path.exists(data_dir) else []
     
     return {
@@ -82,7 +99,7 @@ async def get_analytics_summary():
 
 @app.get("/api/campus/buildings")
 async def get_campus_buildings():
-    data_dir = os.getenv("DATA_DIR", "/Users/jaimin/FAQ CHATBOT/files/")
+    data_dir = DATA_DIR
     buildings = []
 
     # 1. Load buildings from campus_map.json
@@ -150,7 +167,7 @@ async def websocket_chat(websocket: WebSocket):
                 await websocket.send_json({"chunk": f"Error: {guard['rejection_reason']}", "done": True, "sources": []})
                 continue
                 
-            context_chunks, prompt, sources = rag_engine.query_rag(guard["sanitized_query"])
+            context_chunks, prompt, sources, confidence = rag_engine.query_rag(guard["sanitized_query"])
             
             async for chunk in failover_llm.stream_llm(prompt):
                 await websocket.send_json({"chunk": chunk, "done": False, "sources": sources})

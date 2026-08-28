@@ -3,7 +3,7 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import threading
-from .data_ingester import ingest_all
+from .data_ingester import ingest_all, DEFAULT_DATA_DIR
 
 class DataChangeHandler(FileSystemEventHandler):
     def __init__(self):
@@ -33,7 +33,7 @@ observer = None
 
 def start_watcher():
     global observer
-    data_dir = os.getenv("DATA_DIR", "/Users/jaimin/FAQ CHATBOT/files/")
+    data_dir = os.getenv("DATA_DIR", str(DEFAULT_DATA_DIR))
     if not os.path.exists(data_dir):
         os.makedirs(data_dir, exist_ok=True)
     event_handler = DataChangeHandler()
